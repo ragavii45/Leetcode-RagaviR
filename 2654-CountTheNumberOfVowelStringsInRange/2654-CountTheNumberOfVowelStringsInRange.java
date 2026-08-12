@@ -1,0 +1,27 @@
+// Last updated: 12/08/2026, 21:29:01
+class Solution {
+    public int vowelStrings(String[] words, int left, int right) {
+
+        int count = 0;
+
+        for (int i = left; i <= right; i++) {
+
+            String word = words[i];
+
+            if (isVowel(word.charAt(0)) &&
+                isVowel(word.charAt(word.length() - 1))) {
+
+                count++;
+            }
+        }
+
+        return count;
+    }
+
+    private boolean isVowel(char c) {
+
+        return c == 'a' || c == 'e' ||
+               c == 'i' || c == 'o' ||
+               c == 'u';
+    }
+}
